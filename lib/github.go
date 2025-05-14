@@ -287,7 +287,7 @@ func FormatSearchResults(ghSearch GithubSearch) []string {
 
 	var formattedSearchResults []string
 	for _, searchResult := range ghSearch.Items {
-		formatted := fmt.Sprintf("%v [⭐️%v] %v", searchResult.FullName, searchResult.Stars, searchResult.Description)
+		formatted := fmt.Sprintf("%v [️%v] %v", searchResult.FullName, searchResult.Stars, searchResult.Description)
 		formattedSearchResults = append(formattedSearchResults, formatted)
 	}
 

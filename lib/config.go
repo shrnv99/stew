@@ -167,7 +167,7 @@ func NewStewConfig(userOS string) (StewConfig, error) {
 		stewConfig.StewPath = selectedStewPath
 		stewConfig.StewBinPath = selectedStewBinPath
 		stewConfig.ExcludedFromUpgradeAll = excludedFromUpgradeAll
-		fmt.Printf("📄 Updated %v\n", constants.GreenColor(stewConfigFilePath))
+		fmt.Printf(" Updated %v\n", constants.GreenColor(stewConfigFilePath))
 	}
 
 	pathVariable := os.Getenv("PATH")

@@ -61,7 +61,7 @@ func WriteLockFileJSON(lockFileJSON LockFile, outputPath string) error {
 		return err
 	}
 
-	fmt.Printf("📄 Updated %v\n", constants.GreenColor(outputPath))
+	fmt.Printf(" Updated %v\n", constants.GreenColor(outputPath))
 
 	return nil
 }
