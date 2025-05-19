@@ -86,7 +86,8 @@ func upgradeOne(binaryName, userOS, userArch string, lockFile stew.LockFile, sys
 	tag := githubProject.Releases[tagIndex].TagName
 
 	if pkg.Tag == tag {
-		return stew.AlreadyInstalledLatestTagError{Tag: tag}
+		fmt.Printf("The latest tag %v is already installed\n", tag)
+		return nil
 	}
 
 	// Make sure there are any assets at all

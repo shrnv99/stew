@@ -392,34 +392,36 @@ func TestInstalledFromURLError_Error(t *testing.T) {
 	}
 }
 
-func TestAlreadyInstalledLatestTagError_Error(t *testing.T) {
-	type fields struct {
-		Tag string
-	}
-	tests := []struct {
-		name   string
-		fields fields
-		want   string
-	}{
-		{
-			name: "test1",
-			fields: fields{
-				Tag: "testTag",
-			},
-			want: fmt.Sprintf("%v The latest tag %v is already installed", constants.RedColor("Error:"), constants.RedColor("testTag")),
-		},
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			e := AlreadyInstalledLatestTagError{
-				Tag: tt.fields.Tag,
-			}
-			if got := e.Error(); got != tt.want {
-				t.Errorf("AlreadyInstalledLatestTagError.Error() = %v, want %v", got, tt.want)
-			}
-		})
-	}
-}
+
+// This is not a fucking error? What should people do? Go check the latest version before every upgrade?
+// func TestAlreadyInstalledLatestTagError_Error(t *testing.T) {
+// 	type fields struct {
+// 		Tag string
+// 	}
+// 	tests := []struct {
+// 		name   string
+// 		fields fields
+// 		want   string
+// 	}{
+// 		{
+// 			name: "test1",
+// 			fields: fields{
+// 				Tag: "testTag",
+// 			},
+// 			want: fmt.Sprintf("%v The latest tag %v is already installed", constants.RedColor("Error:"), constants.RedColor("testTag")),
+// 		},
+// 	}
+// 	for _, tt := range tests {
+// 		t.Run(tt.name, func(t *testing.T) {
+// 			e := AlreadyInstalledLatestTagError{
+// 				Tag: tt.fields.Tag,
+// 			}
+// 			if got := e.Error(); got != tt.want {
+// 				t.Errorf("AlreadyInstalledLatestTagError.Error() = %v, want %v", got, tt.want)
+// 			}
+// 		})
+// 	}
+// }
 
 func TestNoGithubSearchResultsError_Error(t *testing.T) {
 	type fields struct {
